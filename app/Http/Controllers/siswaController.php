@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use App\Models\Dashboard;
+use App\Models\Siswa;
  
-class dashboardController extends Controller
+class siswaController extends Controller
 {
     public function index()
     {
-        return view('master.view_siswa');
+        $data = array(
+            'siswa'=>Siswa::all()
+        );
+            return view('master.siswa')->with($data);
     }
 }

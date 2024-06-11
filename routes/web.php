@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\siswaController;
 
-Route::get('/', function () {
-    return view('master/view_siswa');
-});
-        
+Route::get('/', [siswaController::class, 'index']);
+            

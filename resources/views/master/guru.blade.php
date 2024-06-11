@@ -20,12 +20,12 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                Dashboard Siswa
-                                <button type="button" style="float: right" class="btn btn-success" data-toggle="modal" data-target="#modal-lg">
+                                Master Siswa
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><span>Tambah</span>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table tablel-striped table-bordered" id="table-siswa">
+                                    <table class="table table-striped table-bordered" id="table-siswa">
                                         <thead>
                                             <tr>
                                                 <th>No.</th>

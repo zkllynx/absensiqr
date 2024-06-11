@@ -8,22 +8,12 @@ use DB;
 
 class Siswa extends Model
 {
-    protected $table = 'siswa';
-    //protected $guarded = ['id'];
-    protected $fillable = ['id', 'nama'];
+    protected $table = 'siswa'; // Nama tabel dalam database
+    protected $fillable = ['nisn', 'nama_siswa', 'kelas', 'status']; // Kolom yang dapat diisi secara massal
 
-    public function user()
+    // Metode statis untuk mengambil semua siswa
+    public static function getAll()
     {
-        return $this->belongsTo('App\User');
+        return self::all();
     }
-
-    // public function jadwal()
-    // {
-    //     return $this->belongsToMany('App\Jadwal','absensi','siswa_id', 'jadwal_id' );
-    // }
-
-    // public function kelas()
-    // {
-    //     return $this->belongsTo('App\Kelas');
-    // }
 }
