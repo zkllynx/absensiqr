@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use App\Models\Guru;
+use App\Models\Roles;
  
-class guruController extends Controller
+class rolesController extends Controller
 {
     public function index()
     {
         $data = array(
-            'guru'=>Guru::all()
+            'role'=>Roles::all()
         );
-            return view('master.guru')->with($data);
+            return view('master.role')->with($data);
     }
 }

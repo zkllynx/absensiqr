@@ -10,7 +10,7 @@ class siswaController extends Controller
     public function index()
     {
         $data = array(
-            'siswa'=>Siswa::all()
+            'siswa'=>Siswa::getAll()
         );
             return view('master.siswa')->with($data);
     }

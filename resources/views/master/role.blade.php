@@ -8,7 +8,7 @@
                 <div class="row mb-2">
                     <!-- Page Title -->
                     <div class="col-sm-6">
-                        <!-- <h1 class="m-0 text-dark">Siswa}</h1> -->
+                        <!-- <h1 class="m-0 text-dark">Role}</h1> -->
                     </div>
                         </div>
             </div>
@@ -20,7 +20,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                Master Siswa
+                                Master Role
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><span>Tambah</span>
                             </div>
                             <div class="card-body">
@@ -29,20 +29,21 @@
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
-                                                <th>Role</th>
-                                                <th>Status</th>
+                                                <th>Role</th>   
+                                                <th>Aksi</th>
                                             </tr>
                                         </head>
                                         <tbody>
-                                            <?php
-                                                $no=1;
-                                                foreach($line as $data) : 
-                                                ?>
+                                        <?php
+                                            $no=1;
+                                            foreach($role as $data) : 
+                                            ?>
                                             <tr>
+                                                <td><?php echo $no++ ?></td>
+                                                <td><?php echo $data->role_name ?></td>
                                                 <td></td>
-                                                <td>Resna</td>
-                                                <td>7A</td>
                                             </tr>
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>

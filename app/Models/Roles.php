@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class Siswa extends Model
+class Roles extends Model
 {
-    protected $table = 'user_login';
+    protected $table = 'roles';
 
     public static function getAll()
     {
-        return DB::select('SELECT * FROM user_login WHERE role_id = 3');
+        return self::all();
     }
 }

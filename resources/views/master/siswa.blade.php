@@ -44,8 +44,10 @@
                                             <tr>
                                                 <td><?php echo $no++ ?></td>
                                                 <td><?php echo $data->nisn ?></td>
-                                                <td><?php echo $data->nama_siswa ?></td>
-                                                <td><?php echo $data->kelas ?></td>
+                                                <td><?php echo $data->fullname ?></td>
+                                                <td><?php echo $data->class ?></td>
+                                                <td><?php echo $data->username ?></td>
+                                                <td><?php echo $data->user_pass ?></td>
                                                 <td><?php echo $data->status ?></td>
                                                 <td></td>
                                             </tr>

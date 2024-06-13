@@ -8,7 +8,7 @@
                 <div class="row mb-2">
                     <!-- Page Title -->
                     <div class="col-sm-6">
-                        <!-- <h1 class="m-0 text-dark">Siswa}</h1> -->
+                        <!-- <h1 class="m-0 text-dark">Guru}</h1> -->
                     </div>
                         </div>
             </div>
@@ -20,7 +20,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                Master Siswa
+                                Master Guru
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><span>Tambah</span>
                             </div>
                             <div class="card-body">
@@ -29,16 +29,30 @@
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
+                                                <th>NPK</th>   
                                                 <th>Nama</th>
-                                                <th>Kelas</th>
+                                                <th>Username</th>
+                                                <th>Password</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </head>
                                         <tbody>
+                                        <?php
+                                            $no=1;
+                                            foreach($guru as $data) : 
+                                            ?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>Resna</td>
-                                                <td>7A</td>
+                                                <td><?php echo $no++ ?></td>
+                                                <td><?php echo $data->npk ?></td>
+                                                <td><?php echo $data->fullname ?></td>
+                                                <td><?php echo $data->username ?></td>
+                                                <td><?php echo $data->user_pass ?></td>
+                                                <td><?php echo $data->role ?></td>
+                                                <td><?php echo $data->status ?></td>
                                             </tr>
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -55,7 +69,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Tambah Siswa</h4>
+                <h4 class="modal-title">Tambah Guru</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
