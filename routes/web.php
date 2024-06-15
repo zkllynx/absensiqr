@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\siswaController;
+use App\Http\Controllers\rolesController;
 
-Route::get('/', [siswaController::class, 'index']);
+Route::get('/', [rolesController::class, 'index']);
             

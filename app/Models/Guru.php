@@ -12,6 +12,6 @@ class Guru extends Model
 
     public static function getAll()
     {
-        return self::all();
+        return DB::select('SELECT * FROM user_login WHERE role_id = 2');
     }
 }

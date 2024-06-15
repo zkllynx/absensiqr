@@ -28,9 +28,9 @@
                                     <table class="table table-striped table-bordered" id="table-siswa">
                                         <thead>
                                             <tr>
-                                                <th>No.</th>
-                                                <th>Role</th>   
-                                                <th>Aksi</th>
+                                                <th class="text-center">No.</th>
+                                                <th class="text-center">Role</th>   
+                                                <th class="text-center">Aksi</th>
                                             </tr>
                                         </head>
                                         <tbody>
@@ -39,9 +39,11 @@
                                             foreach($role as $data) : 
                                             ?>
                                             <tr>
-                                                <td><?php echo $no++ ?></td>
-                                                <td><?php echo $data->role_name ?></td>
-                                                <td></td>
+                                                <td class="text-center"><?php echo $no++ ?></td>
+                                                <td class="text-center" ><?php echo $data->role_name ?></td>
+                                                <td>
+                                                <a data-toggle="modal" href="#formModalHapus<?=$data->role_id?>" class="btn btn-icon btn-danger"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
+                                                </td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -56,11 +58,35 @@
     </div>
 </div>
 
+<!-- Modal Hapus-->
+<?php
+      foreach($role as $data) { ?>
+<div class="modal fade" id="formModalHapus<?=$data->role_id?>" tabindex="-1" role="dialog" aria-labelledby="formModalEditLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="formModalEditLabel"><font color="red">Delete</font> <?= $data->id_master_preventive ?>!</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h5>Anda yakin akan menghapus data ini?</h5>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnCloseIt" data-dismiss="modal">Close</button>
+                <a href="/hapus_master_preventive/{{ $data->id_master_preventive }}" class="btn btn-danger">Hapus</a>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+
 <div class="modal fade" id="modal-lg">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Tambah Siswa</h4>
+                <h4 class="modal-title">Tambah Role</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

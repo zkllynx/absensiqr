@@ -32,6 +32,9 @@
                                                 <th>NISN</th>   
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
+                                                <th>Username</th>
+                                                <th>Password</th>
+                                                <th>Role</th>
                                                 <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -48,7 +51,25 @@
                                                 <td><?php echo $data->class ?></td>
                                                 <td><?php echo $data->username ?></td>
                                                 <td><?php echo $data->user_pass ?></td>
-                                                <td><?php echo $data->status ?></td>
+                                                <td>
+                                                    <?php
+                                                    switch ($data->role_id) {
+                                                        case 1:
+                                                            echo 'admin';
+                                                            break;
+                                                        case 2:
+                                                            echo 'guru';
+                                                            break;
+                                                        case 3:
+                                                            echo 'siswa';
+                                                            break;
+                                                        default:
+                                                            echo 'unknown';
+                                                            break;
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td><?php echo $data->status == 1 ? 'aktif' : 'tidak aktif'; ?></td>
                                                 <td></td>
                                             </tr>
                                             <?php endforeach; ?>
@@ -88,13 +109,34 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Nama</label>
-                                <input type="text" class="form-control" name="name" placeholder="Nama Lengkap">
+                                <input type="text" class="form-control" name="fullname" placeholder="Nama Lengkap">
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" class="form-control" name="username" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label>Kelas</label>
+                                <input type="text" class="form-control" name="class" placeholder="Kelas">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>NIP</label>
-                                <input type="text" class="form-control" name="identity" placeholder="Nomor Induk Pengajar(10 digit angka)">
+                                <label>NISN</label>
+                                <input type="text" class="form-control" name="nisn" placeholder="Nomor Induk Siswa Nasional">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="user_pass" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select class=form-control" name="role">
+                                    <option value="">Pilih Role</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Guru</option>
+                                    <option value="3">Siswa</option>     
+                                </select>
                             </div>
                         </div>
                     </div>

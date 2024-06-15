@@ -12,6 +12,6 @@ class Roles extends Model
 
     public static function getAll()
     {
-        return self::all();
+        return DB::select('SELECT * FROM roles');
     }
 }
